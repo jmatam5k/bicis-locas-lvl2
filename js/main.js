@@ -5,6 +5,7 @@ function validateForm(){
 	var email = document.getElementById('input-email').value;
 	var pass = document.getElementById('input-password').value;
 	var indice = document.getElementsByTagName('select')[0].selectedIndex;
+	var tw= document.getElementById('input-social').value;
 	/*Paso1: Los campos nombre y apellido sólo deben permitir caracteres de la A-Z
 	Para los campos nombre y apellido la primera letra debe ser mayúscula*/
 	function nomBre(){
@@ -107,4 +108,15 @@ function validateForm(){
 		}
 	}
 	seleccion();
+	function twitter(){
+		if (tw== null || tw==0){
+			var contenedor = document.getElementsByClassName('input-group')[0];
+			var nombreSpan = document.createElement('span');
+			var nodoAlerta = document.createTextNode("Debes completar este campo");
+			nombreSpan.appendChild(nodoAlerta);
+			contenedor.appendChild(nombreSpan);
+			return false;
+		}
+	}
+	twitter();
 }
